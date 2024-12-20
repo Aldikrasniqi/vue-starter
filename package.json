@@ -14,7 +14,8 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "npx prettier --write .",
+    "lint-staged": "lint-staged",
+    "format": "prettier --write .",
     "prepare": "husky install"
   },
   "dependencies": {
