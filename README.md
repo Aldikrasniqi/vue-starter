@@ -1,18 +1,41 @@
-# vue-starter
+# Vue 3 template
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help get you started developing with Vue 3 in Vite with the following dependencies and configurations:
 
-## Recommended IDE Setup
+## Technologies Used
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Vue.js**: ^3.5.13
+- **Vite**: ^5.4.11
+- **Pinia**: ^2.2.6
+- **Cypress**: ^13.16.0
+- **Vitest**: ^2.1.5
+- **Tailwind CSS**: ^3.4.17
+- **TypeScript**: ~5.6.3
 
-## Type Support for `.vue` Imports in TS
+## Software Design Patterns
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Composition API**: Utilized in Vue components for better organization and reusability.
+- **Store Pattern**: Using Pinia for state management, promoting a centralized state management approach.
 
-## Customize configuration
+## Style Guide
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **ESLint**: Configured with rules for consistent code style.
+- **Prettier**: Used for code formatting, ensuring a uniform code style across the project.
+- **Tailwind CSS**: Utility-first CSS framework for styling components.
+
+## Reusable Components
+
+- **NavigationBar**: A reusable navigation component that can be used across different views.
+- **WrapedButton**: A button component that can be reused with different titles and click actions.
+
+## Dependencies
+
+### Cross-Functional Team Dependencies
+
+- **Cypress**: For end-to-end testing.
+- **Vitest**: For unit testing.
+- **Pinia**: For state management.
+- **Tailwind CSS**: For styling components.
 
 ## Project Setup
 
