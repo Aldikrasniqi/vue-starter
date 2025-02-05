@@ -8,7 +8,7 @@ const store = useCounterStore()
 <template>
   <main>
     <h1 class="text-2xl font-bold tracking-tighter">
-      This is home page
+      This is home page test
     </h1>
     <p class="text-gray-600 dark:text-gray-300">
       Counter: {{ store.count }}
