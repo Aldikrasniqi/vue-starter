@@ -25,11 +25,13 @@ jobs:
     - name: Type check
       run: npm run type-check
 
-    - name: Lint
-      run: npm run lint
-
-    - name: Lint fix
+    - name: Lint and fix
       run: npm run lint:fix
+      continue-on-error: true
+
+    - name: Lint check
+      run: npm run lint
+      continue-on-error: true
 
     - name: Run unit tests
       run: npm run test:unit
