@@ -174,6 +174,85 @@ It is much faster than the production build.
 
 But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments).
 
+## CI/CD
+
+This project uses GitHub Actions for continuous integration and deployment. The following workflows are configured:
+
+### CI Workflow
+
+The CI workflow runs on every push and pull request to `main` and `workflow-setup` branches:
+
+```sh
+# Runs automatically on push/PR, but can be triggered manually
+gh workflow run ci.yml
+```
+
+Includes:
+
+- Type checking with TypeScript
+- Linting with ESLint
+- Unit testing with Vitest
+- Build verification
+
+### Docker Workflow
+
+Automatically builds and pushes Docker images to GitHub Container Registry:
+
+```sh
+# View Docker images
+gh package list
+```
+
+- Triggers on pushes to `main` and `workflow-setup`
+- Creates tagged images for version releases
+- Pushes to GitHub Container Registry (ghcr.io)
+
+### Release Workflow
+
+Automates the release process when version tags are pushed:
+
+```sh
+# Create and push a new release
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+- Triggers on `v*` tags (e.g., v1.0.0)
+- Generates changelog from commits
+- Creates GitHub Release
+
+### Dependabot
+
+Automated dependency updates:
+
+- NPM packages: Weekly updates
+- Docker base images: Weekly updates
+- GitHub Actions: Weekly updates
+
+### GitHub Repository Setup
+
+1. Enable GitHub Actions:
+
+   - Settings → Actions → General
+   - Allow all actions and reusable workflows
+
+2. Configure Package Registry:
+
+   - Settings → Packages
+   - Enable "Inherit access from source repository"
+
+3. Branch Protection:
+
+   - Settings → Branches
+   - Add rule for `main` branch
+   - Require status checks:
+     - `test` (CI)
+     - `build` (Docker)
+
+4. Environment Variables:
+   - No additional secrets required for basic setup
+   - GITHUB_TOKEN is automatically provided
+
 # Vue Starter
 
 ![CI](https://github.com/{username}/{repo}/actions/workflows/ci.yml/badge.svg?branch=workflow-setup)
