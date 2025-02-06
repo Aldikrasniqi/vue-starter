@@ -173,3 +173,17 @@ This runs the end-to-end tests against the Vite development server.
 It is much faster than the production build.
 
 But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments).
+
+## GitHub Actions
+
+If you want to use the GitHub Actions workflow, I have a workflow-setup branch that has the workflow setup and is ready to use.
+
+The workflow-setup branch has
+
+- The CI workflow runs on every push and pull request to main and workflow-setup branches, including linting, formatting, unit tests and end-to-end tests
+
+- The Docker Workflow automatically builds and pushes Docker images to GitHub Container Registry, triggered by a push to main and workflow-setup branches
+
+- The Dependabot workflow runs weekly and opens pull requests to update the dependencies
+
+The workflow-setup branch is ready to use.
