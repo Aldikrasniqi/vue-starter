@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "pinia": "^2.2.6",
-    "vite": "^5.4.21",
+    "vite": "^7.2.7",
     "vue": "^3.5.13",
     "vue-router": "^4.4.5"
   },
@@ -50,7 +50,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~5.6.3",
     "vite-plugin-vue-devtools": "^7.6.5",
-    "vitest": "^2.1.5",
+    "vitest": "^4.0.15",
     "vue-tsc": "^2.1.10"
   },
   "lint-staged": {
